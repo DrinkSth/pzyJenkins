@@ -2,14 +2,16 @@
 一些jenkins使用记录
 
 1.ubuntu20.04安装jenkins
-将存储库密钥添加到系统：wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+将存储库密钥添加到系统：
+wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
 
 sudo sh -c ‘echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list’
-sudo apt-get update 执行update后如果提示GPG错误，参考该文档解决https://2hux1nb0.github.io/2021/12/16/ubuntu安装Jenkins报GPG错误解决办法
 
-sudo apt-get install jenkins
+3.sudo apt-get update 执行update后如果提示GPG错误，参考该文档解决https://2hux1nb0.github.io/2021/12/16/ubuntu安装Jenkins报GPG错误解决办法
 
-配置Jenkins端口：修改/etc/default/jenkins, 配置默认端口8080改为8082（或者其他不冲突的端口号），
+4.sudo apt-get install jenkins
+
+5.配置Jenkins端口：修改/etc/default/jenkins, 配置默认端口8080改为8082（或者其他不冲突的端口号），
 注：这里jenkins默认只读的，端口默认8080会和tomcat或Apache冲突，需要用root身份进行修改 sudo vim /etc/default/jenkins
 改为：HTTP_PORT=8082
 
