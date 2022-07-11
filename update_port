@@ -1,0 +1,18 @@
+ubuntu修改jenkins 端口
+
+# 进入目录
+cd /usr/lib/systemd/system
+vim jenkins.service
+
+# 修改为想要的端口
+Environment="JENKINS_PORT=8586"
+
+# 重新加载配置文件
+sudo systemctl daemon-reload
+
+sudo systemctl stop jenkins
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+
+#查看状态(可看到端口已更新)
+ps -def | grep jenkins
